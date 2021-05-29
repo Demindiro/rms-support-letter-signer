@@ -1,0 +1,4 @@
+venv/
+secret.key
+test.db
+__pycache__/
