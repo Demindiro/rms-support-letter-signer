@@ -1,4 +1,4 @@
-from flask import Flask, render_template, flash, request, redirect, jsonify
+from flask import Flask, render_template, flash, request, redirect, jsonify, url_for
 import os
 import storage
 
@@ -46,7 +46,7 @@ def submit(lang='en'):
     else:
         storage.insert(name, link)
         flash(get_translation(lang)['submit_ok'], 'ok')
-    return redirect(f'/{lang}/')
+    return redirect(url_for('main', lang=lang))
 
 @app.route('/export/')
 def export():
